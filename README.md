@@ -141,11 +141,4 @@ Note:- Considering this as a Sample Project, we have not much considered of web 
 <bold>Thanks a lot,</bold><br/>
                                                                                                         Project Leader<br/>
                                                                                                          <b>Shashi Raj</b>
-#pollscm to check trigger
-#new item
-#webhook test
-#new test
-#test
-#new
 #new webhook
-#new hook
