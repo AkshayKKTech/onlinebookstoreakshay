@@ -2,6 +2,9 @@ pipeline {
     agent any  
     tools {
         // Must match the name configured in 'Global Tool Configuration'
+        maven 'Maven3'
+        // Replace 'SonarScanner' with the name you saved for your scanner tool
+        sonar-scanner 'SonarScanner'
         scannerHome = tool 'SonarScanner' 
     }
     stages {  
