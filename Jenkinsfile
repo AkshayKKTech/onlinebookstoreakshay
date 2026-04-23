@@ -1,27 +1,26 @@
 pipeline {  
     agent any  
     tools {
-        // Must match the name configured in 'Global Tool Configuration'
+        // Ensure 'Maven3' matches the name in Manage Jenkins > Tools
         maven 'Maven3'
-        // Replace 'SonarScanner' with the name you saved for your scanner tool
-        sonar-scanner 'SonarScanner'
-        scannerHome = tool 'SonarScanner' 
     }
     stages {  
         stage("git_checkout") {  
             steps {  
-                echo "cloning repository" 
-                // Actual checkout logic goes here
+                // This checks out the code from the URL you configured in the job
+                checkout scm
                 echo "repo cloned successfully"  
             }  
         } 
         stage("SonarQube Analysis") {
             steps {
-                // 'SonarQube' must match the server name in 'Configure System'
+                // 'SonarQube' must match the Server Name in Manage Jenkins > System
                 withSonarQubeEnv('SonarQube') {
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    // Maven will automatically use its built-in sonar plugin
+                    sh "mvn sonar:sonar"
                 }
             }
         }
     }
 }
+
