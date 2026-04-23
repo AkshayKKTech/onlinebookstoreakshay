@@ -14,8 +14,8 @@ pipeline {
         } 
         stage("SonarQube Analysis") {
             steps {
-                // 'SonarQube' must match the Server Name in Manage Jenkins > System
-                withSonarQubeEnv('SonarQube') {
+                // 'Sonarqubeservers' must match the Server Name in Manage Jenkins > System
+                withSonarQubeEnv('Sonarqubeservers') {
                     // Maven will automatically use its built-in sonar plugin
                     sh "mvn sonar:sonar"
                 }
