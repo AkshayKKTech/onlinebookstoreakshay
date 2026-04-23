@@ -2,7 +2,7 @@ pipeline {
     agent any  
     tools {
         // Ensure 'Maven3' matches the name in Manage Jenkins > Tools
-        maven 'Maven3'
+        maven 'MAVEN_HOME
     }
     stages {  
         stage("git_checkout") {  
